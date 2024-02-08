@@ -1,0 +1,20 @@
+#Context API - helps us to pass our data directly to the component we want to use it without going props drilling. It makes passing props down our component easier.
+    We use Context API when our application gets larger, in order to manage data/states that is being passed into our components.
+    Only use Context API when you will e passing data from your APP component, about 3-4 components down, instead just use Prop's Drilling.
+
+#Use Cases for Context API
+1. Theming - dark/light mode features
+2. User Authentication - many components need to know if the user is logged in.
+3. Routing
+4. Managing States - when the app begins to get complex and state management gets complex(we often combine Context API with useReducer hook to manage our states). Another alternative is Redux.
+
+#Implementation:
+1. Create the context in a separate file using "createContext()" hook and API
+2. Provide the context to the App component using the Provider API(u are using the Provider API to provide info to your App component)
+    It passes info/data to the <App /> component upon which it is wrapped around and all the children and grandchildren components embedded into App component will have direct acccess to the data/info passed to it.
+    The Provider API has a "value" property where u put the data/info you want to pass to the App component.
+    Note - to pass more than 2data's in your value property, use an Object in the value property
+        E.g value={ {users, delete} }
+3. Use the context in your Components:  using the "useContext()" hook
+    We use the useContext() hook to acces the value that we passed from the APP component.
+
